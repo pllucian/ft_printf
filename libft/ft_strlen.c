@@ -6,7 +6,7 @@
 /*   By: pllucian <pllucian@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 15:42:30 by pllucian          #+#    #+#             */
-/*   Updated: 2020/11/21 13:43:05 by pllucian         ###   ########.fr       */
+/*   Updated: 2021/01/21 00:15:43 by pllucian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t		len;
 
+	if (!s)
+		return (0);
 	len = 0;
 	while (*s++)
 		len++;

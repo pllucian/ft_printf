@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_print_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pllucian <pllucian@21-school.ru>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/13 11:46:38 by pllucian          #+#    #+#             */
-/*   Updated: 2021/01/18 17:32:52 by pllucian         ###   ########.fr       */
+/*   Created: 2021/01/18 14:26:18 by pllucian          #+#    #+#             */
+/*   Updated: 2021/01/20 23:27:40 by pllucian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+void		ft_print_percent(t_struct *flags)
 {
-	if (!s)
-		return (NULL);
-	while (*s && *s != (char)c)
-		s++;
-	return (*s == (char)c ? (char*)s : NULL);
+	if (flags->minus)
+		flags->length += ft_print_type("%", 1);
+	flags->length += ft_print_width(flags->width, 1, flags->zero);
+	if (!flags->minus)
+		flags->length += ft_print_type("%", 1);
 }
